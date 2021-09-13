@@ -9,9 +9,7 @@ namespace DemoModel.Models
     public class DisplayContact
     {
         public int Id { get; set; }
-        [DisplayName("Nom")]
-        public string LastName { get; set; }
-        [DisplayName("Prenom")]
-        public string FirstName { get; set; }
+        [DisplayName("Nom Complet")]
+        public string FullName { get; set; }
     }
 }

@@ -20,8 +20,8 @@ namespace DemoModel.Controllers
 
         public IActionResult Index(string filter)
         {
-            IEnumerable<Contact> contacts = (filter is null) ? _repository.Get() : _repository.Get(c => c.LastName.ToLower().Contains(filter.ToLower()) || c.FirstName.ToLower().Contains(filter.ToLower()));
-            return View(contacts.ToList().Select(c => new DisplayContact() { Id = c.Id, LastName = c.LastName, FirstName = c.FirstName }));            
+            IEnumerable<Contact> contacts = (filter is null) ? _repository.Get() : _repository.Get(c => c.FullName.ToLower().Contains(filter.ToLower()));
+            return View(contacts.ToList().Select(c => new DisplayContact() { Id = c.Id, FullName = c.FullName }));            
         }
     }
 }
